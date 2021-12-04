@@ -1,0 +1,58 @@
+<aura:component implements="force:hasRecordId">
+  <aura:attribute name="boat" type="Boat__c" />
+  <aura:attribute name="boatReview" type="BoatReview__c" access="private" />
+  <aura:attribute name="review" type="BoatReview__c" access="private" />
+  <aura:attribute name="recordError" type="String" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:registerEvent name="BoatReviewAdded" type="c:BoatReviewAdded" />
+  <!-- record data for persisting new record -->
+  <force:recordData
+    aura:id="service"
+    fields="Id,Name,Comment__c,Boat__c"
+    targetFields="{!v.boatReview}"
+    targetError="{!v.recordError}"
+    recordUpdated="{!c.onRecordUpdated}"
+    mode="EDIT"
+  />
+  <!-- form -->
+  <lightning:layout verticalAlign="start" multipleRows="true">
+    <lightning:layoutItem padding="around-small" flexibility="auto">
+      <div ariaLabelledby="boatreviewform">
+        <form class="slds-form--stacked">
+          <lightning:input
+            aura:id="boatreview"
+            label="Title"
+            name="title"
+            value="{!v.boatReview.Name}"
+          />
+          <div class="slds-form-element">
+            <label class="slds-form-element__label" for="description"
+              >Description</label
+            >
+            <div class="slds-form-element__control">
+              <lightning:inputRichText
+                aura:id="description"
+                title="description"
+                placeholder="Comment..."
+                value="{!v.boatReview.Comment__c}"
+                disabledCategories="FORMAT_FONT"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="slds-text-title">Rating</label>
+            <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false"
+          /></div>
+          <lightning:button
+            label="Save"
+            class="slds-m-top--medium slds-align_absolute-center"
+            variant="neutral"
+            iconName="utility:save"
+            onclick="{!c.onSave}"
+          />
+        </form>
+      </div>
+    </lightning:layoutItem>
+  </lightning:layout>
+</aura:component>
