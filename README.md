@@ -26,4 +26,6 @@ Troubleshooting Apex
 
 
 Find more tutorials and practise exams for salesforce development,apex,lightning web component
-Https://allnetworkportal.info/courses/
+1.https://www.tutorialspoint.com/market/course/preview/6030
+2.https://www.udemy.com/course/salesforce-apex-programming-bootcamp/?referralCode=F1DC7A46AB32DE7C0E5B
+
