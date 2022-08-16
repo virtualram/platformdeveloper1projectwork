@@ -41,6 +41,9 @@ https://www.udemy.com/course/learn-html-and-javascript-in-one-day/?referralCode=
 Python course for Beginners: Complete Python Programming2021
 https://www.udemy.com/course/python-programming-tutorial-o/?referralCode=FB99447A30A1766B093C
 
+Python Tutorial for Beginners: Scaler Topics
+https://www.scaler.com/topics/python/
+
 Learn Angular and React -Web Development
 https://www.udemy.com/course/react-js-essenstials-bootcamp-for-beginners/?referralCode=0EB19F744538AA7A6711
 
